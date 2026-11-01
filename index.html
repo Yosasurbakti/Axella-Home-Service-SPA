@@ -1758,7 +1758,7 @@ button { cursor: pointer; border: none; background: none; font-family: inherit; 
         all enjoyed from the comfort of your home.
       </p>
     </div>
-
+    <div id="harga"></div>
     <div class="services__grid" role="list">
 
       <article class="service-card reveal" role="listitem">
@@ -2655,6 +2655,20 @@ if (document.readyState === 'loading') {
 } else {
   init();
 }
+ init();
+/* ─── Klik kartu layanan → WhatsApp ─── */
+document.querySelectorAll('.service-card').forEach(card => {
+  card.addEventListener('click', () => {
+    const name = card.querySelector('.service-card__name').textContent.trim();
+    const msg  = `Hello Axella Home Service SPA, I would like to book ${name}. Can you help me?`;
+
+    if (typeof gtag === 'function') {
+      gtag('event', 'conversion', {'send_to': 'AW-17939391267/aTjOCIr_9NwcEKPGlepC'});
+    }
+
+    window.open('https://wa.me/628217148347?text=' + encodeURIComponent(msg), '_blank', 'noopener');
+  });
+});}
 </script>
 </body>
 </html>
