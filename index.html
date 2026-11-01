@@ -2649,13 +2649,12 @@ function init() {
     });
   }, 300);
 }
-
-if (document.readyState === 'loading') {
+  if (document.readyState === 'loading') {
   document.addEventListener('DOMContentLoaded', init);
 } else {
   init();
 }
- init();
+
 /* ─── Klik kartu layanan → WhatsApp ─── */
 document.querySelectorAll('.service-card').forEach(card => {
   card.addEventListener('click', () => {
@@ -2668,7 +2667,7 @@ document.querySelectorAll('.service-card').forEach(card => {
 
     window.open('https://wa.me/628217148347?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
-});}
+});
 </script>
 </body>
 </html>
