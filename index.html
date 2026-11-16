@@ -2716,6 +2716,22 @@ document.querySelectorAll('.service-card').forEach(card => {
     window.open('https://wa.me/6208217148347?text=' + encodeURIComponent(msg), '_blank', 'noopener');
   });
 });
+<script>
+  document.addEventListener('DOMContentLoaded', function() {
+    var waLinks = document.querySelectorAll('a[href*="wa.me"], a[href*="whatsapp.com"]');
+    waLinks.forEach(function(link) {
+      link.addEventListener('click', function(e) {
+        e.preventDefault();
+        var targetUrl = this.getAttribute('href');
+        gtag('event', 'conversion', {
+          'send_to': 'AW-17939391267/xjxJCLrE3bkdEKPGlepC',
+          'event_callback': function() {
+            window.open(targetUrl, '_blank');
+          }
+        });
+      });
+    });
+  });
 </script>
 </body>
 </html>
